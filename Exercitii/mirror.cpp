@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void functest()
+void functest1()
 {
 	cout << "\n" << "TEST";
 }
@@ -45,7 +45,7 @@ int main()
 
 	cout << '\07';
 
-	functest();
+	functest1();
 
 	return 0;
 

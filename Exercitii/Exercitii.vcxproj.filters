@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ex mirror.cpp">
+    <ClCompile Include="mirror.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

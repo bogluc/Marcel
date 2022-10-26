@@ -1,9 +1,9 @@
 #include <iostream>
 using namespace std;
 
-void functest2()
+void functest3()
 {
-	cout << "\n" << "TEST";
+	cout << "\n" << "TEST 3";
 }
 
 int mirrorString(char starr[])
@@ -45,7 +45,7 @@ int main()
 
 	cout << '\07';
 
-	functest2();
+	functest3();
 
 	return 0;
 

@@ -1,50 +1,63 @@
 #include<iostream>
+#include<conio.h>
 
 using namespace std;
 
-int CharToInt(char c[])
+char c[];
+
+int KeyInput(char c[])
 {
-	int decNr = 0;
-	int temp = 1;
+	char ch = 0;
+	int i = 0;
+
+	cout << "insert number and press q to end program" << '\n';
+
+	while (ch != 'q' && ch != EOF)
+	{
+		//cin.getline(c, 100);
+		ch = _getch();
+		c[i] = ch;
+
+		printf("%c", ch);
+		i++;
+	}
+	int lenStr = i;
+
+	return c[lenStr];
+}
+
+int CharToInt(char c[])
+{	
 	int lenStr = 0;
 	int i = 0;
-	int check = 0;
-	// calculam lungimea sirului 
-	while (c[i] != NULL)
+	c[100] = KeyInput(c);
+	int decNr = 0;
+	int temp = 1;
+
+	while (c[i] != 'q') 
 	{
-		if (c[i] < '0' || c[i] > '9')
-		{
-			check = 1;
-		}
-		
 		i++;
-
 	}
-	if (check == 1)
-	{
-		cout << "only numbers are allowed";
-	}
-	else
-	{
-		lenStr = i;
+	lenStr = i;
 
-		// valoarea ASCII a lui a este 'a'
-		// valoare ASCII a unui caracter escape, de ex \, este '\\' , pt TAB este '\TAB'
-
-		for (i = lenStr - 1; i >= 0; i--)
+	for(i = lenStr - 1; i >= 0; i--)
+	{
+		if (c[i] >= '0' && c[i] <= '9')
 		{
 			decNr = decNr + (c[i] - '0') * temp;
 
 			temp = temp * 10;
 		}
-		cout << decNr;
 	}
-	
+	cout <<'\n'<< decNr;
 	return 0;
 }
 
 int main()
 {
-	char c[] = "1234gv56";
+	char c[100];
+
 	CharToInt(c);
+
+	return 0;
 }
